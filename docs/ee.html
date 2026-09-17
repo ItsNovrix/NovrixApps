@@ -327,6 +327,122 @@
             font-weight: bold;
         }
 
+/* Devvit Apps Achievement Cards */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+@media(max-width: 720px) {
+    .achievements-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 480px) {
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.achievement {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color .25s, transform .25s ease, box-shadow .25s;
+    cursor: default;
+}
+
+.achievement::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--orange), transparent);
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.achievement:hover {
+    border-color: var(--orange);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.25);
+}
+
+.achievement:hover::before {
+    opacity: 1;
+}
+
+.ach-date {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--tx2);
+    margin-bottom: 10px;
+}
+
+.ach-num {
+    font-family: var(--font-serif);
+    font-size: 30px;
+    color: var(--tx1);
+    line-height: 1;
+    margin-bottom: 6px;
+    letter-spacing: -.5px;
+}
+
+.ach-lbl {
+    font-size: 13px;
+    color: var(--tx2);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.ach-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 100px;
+    border: 1px solid;
+    margin-top: 12px;
+}
+
+.ach-chip.milestone {
+    color: #f5c518;
+    border-color: rgba(245,197,24,.3);
+    background: rgba(245,197,24,.08);
+}
+
+.ach-chip.rank {
+    color: #a78bfa;
+    border-color: rgba(167,139,250,.3);
+    background: rgba(167,139,250,.08);
+}
+
+.ach-chip.launch {
+    color: #22c997;
+    border-color: rgba(34,201,151,.3);
+    background: rgba(34,201,151,.08);
+}
+
+.ach-chip.origin {
+    color: var(--orange);
+    border-color: rgba(239,68,68,.3);
+    background: rgba(239,68,68,.08);
+}
+
         /* Footer */
         .footer {
             border-top: 1px solid var(--line);
@@ -464,7 +580,85 @@
                     </div>
                 </div>
             </div>
+            <!-- ══════════════════════════════════
+                 DEVVIT APP ACHIEVEMENTS
+            ══════════════════════════════════ -->
+            <section style="margin-top: 5rem;">
+                <h2 class="heading" style="font-size: 2.5rem;">
+                    Zero to <em>top 50</em><br>in ten months.
+                </h2>
 
+                <p class="subhead">
+                    No ads, no campaigns. The sub grew because members posted, shared, and brought other people in.
+                </p>
+
+                <div class="achievements-grid">
+
+                    <div class="achievement">
+                        <div class="ach-date">May 5, 2025</div>
+                        <div class="ach-num">Day 1</div>
+                        <div class="ach-lbl">Sub founded by u/CertainYam8162 after a community banned image replies in comments. UCOM founded the following day.</div>
+                        <div class="ach-chip origin">Origin</div>
+                    </div>
+
+                    <div class="achievement">
+                        <div class="ach-date">June 28, 2025</div>
+                        <div class="ach-num">Election 1</div>
+                        <div class="ach-lbl">First open community vote held. u/North_Potential_4713 wins — becoming the first ever elected moderator.</div>
+                        <div class="ach-chip launch">Democracy</div>
+                    </div>
+
+                    <div class="achievement">
+                        <div class="ach-date">July 2025</div>
+                        <div class="ach-num">1,000</div>
+                        <div class="ach-lbl">1,000 members two months after the sub was created.</div>
+                        <div class="ach-chip milestone">1K Members</div>
+                    </div>
+
+                    <div class="achievement">
+                        <div class="ach-date">October 2025</div>
+                        <div class="ach-num">Currency</div>
+                        <div class="ach-lbl">MemeCoin goes live. Posts earn 10 MC, comments 5 MC. Daily bonuses, quests, shop, and lucky wheel all active from day one.</div>
+                        <div class="ach-chip launch">System Live</div>
+                    </div>
+
+                    <div class="achievement">
+                        <div class="ach-date">November 2025</div>
+                        <div class="ach-num">10,000</div>
+                        <div class="ach-lbl">10,000 members — less than six months after founding. A community of five figures built entirely by word of mouth.</div>
+                        <div class="ach-chip milestone">10K Members</div>
+                    </div>
+
+                    <div class="achievement">
+                        <div class="ach-date">January 2026</div>
+                        <div class="ach-num">Top 100</div>
+                        <div class="ach-lbl">r/MemeExchangeCommunism enters the top 100 meme subreddits on Reddit — less than 8 months after launch.</div>
+                        <div class="ach-chip rank">Top 100</div>
+                    </div>
+
+                    <div class="achievement">
+                        <div class="ach-date">February 2026</div>
+                        <div class="ach-num">Top 50</div>
+                        <div class="ach-lbl">Top 50 on Reddit. The sub was under a year old at this point.</div>
+                        <div class="ach-chip rank">Top 50</div>
+                    </div>
+
+                    <div class="achievement">
+                        <div class="ach-date">March 2026</div>
+                        <div class="ach-num">10M</div>
+                        <div class="ach-lbl">Ten million views. The sub started because one community banned image comments.</div>
+                        <div class="ach-chip milestone">10M Views</div>
+                    </div>
+
+                    <div class="achievement">
+                        <div class="ach-date">Current</div>
+                        <div class="ach-num">36.9k</div>
+                        <div class="ach-lbl">Current membership as of March 2026. Top 50 ranking, two elections held, currency system running.</div>
+                        <div class="ach-chip milestone">Current</div>
+                    </div>
+
+                </div>
+            </section>
             <div class="card" style="margin-top: 4rem;">
                 <div class="fhead">
                     <div>
