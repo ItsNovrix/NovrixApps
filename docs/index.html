@@ -755,12 +755,12 @@
             data.forEach(egg => {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-                    <td style="font-family: monospace; font-weight: bold;">"${egg.trigger}"</td>
+                    <td style="font-family: monospace; font-weight: bold;">${egg.trigger}</td>
                     <td><em>${egg.response}</em></td>
                 `;
                 tbody.appendChild(tr);
             });
-            countDisplay.textContent = `Displaying ${data.length} triggers.`;
+            countDisplay.textContent = `Displaying ${data.length} updates.`;
         }
 
         // Initial Render
